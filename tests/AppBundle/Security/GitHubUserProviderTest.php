@@ -47,7 +47,7 @@ class GithubUserProviderTest extends TestCase
         $serializer
             ->expects($this->once()) // Nous nous attendons à ce que la méthode deserialize soit appelée une fois
             ->method('deserialize')
-            ->willReturn([]);
+            ->willReturn($userData);
 
         $githubUserProvider = new GithubUserProvider($client, $serializer);
         $user = $githubUserProvider->loadUserByUsername('xxxx');
